@@ -37,4 +37,5 @@ DELETE FROM students
         else:
             print("Invalid choice!!!")
     conn.close()
-deletestudent()
+if __name__=="__main__":
+    deletestudent()

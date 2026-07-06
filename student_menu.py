@@ -1,12 +1,12 @@
 import view_students as vs
-import insert_students as ist
-import lookup_students as ls
-import update_students as us
+import insert_student as ist
+import lookup_student as ls
+import update_student as us
 import delete_student as ds
 def main():
     while True:
         print()
-        print(" ===== Student Database =====")
+        print(" ===== Student Database Management System=====")
         print("1. Add Student. ")
         print("2. View All Students.")
         print("3. Update Data. ")
