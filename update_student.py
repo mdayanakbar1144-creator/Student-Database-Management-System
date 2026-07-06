@@ -1,4 +1,5 @@
 import sqlite3
+from utils import display_students
 def updateStudent():
     conn=sqlite3.connect("collage.db")
     cursor = conn.cursor()
@@ -12,15 +13,8 @@ def updateStudent():
         print("Student not found!")
     else:
         print()
-        print("-" * 30)
         print("Student detail...")
-        print()
-        print(f"ROLL no. : {result[0]}")
-        print(f"Name     : {result[1]}")
-        print(f"Branch   : {result[4]}")
-        print(f"CGPA     : {result[6]}")
-        print("-" * 30)
-        print()
+        display_students(result)
         new_name = input("Enter the new name : ")
         new_branch = input("Enter the new branch : ")
         new_cgpa= float(input("Enter the new CGPA : "))
