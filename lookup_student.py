@@ -1,5 +1,5 @@
 import sqlite3
-from utils import display_students
+from utils import display_students,get_student_by_roll_no
 def lookup():
     conn=sqlite3.connect("collage.db")
     conn.row_factory=sqlite3.Row
@@ -10,13 +10,11 @@ def lookup():
     #             WHERE roll = ?""",(roll,))
     # result = cursor.fetchone()
 
-    for student in cursor.execute("""
-    SELECT * FROM students
-                WHERE roll = ?""",(roll,)):
-            display_students(student)
-            break
+    student=get_student_by_roll_no(cursor,roll)
+    if student is None:
+         print("Student not found!")
     else:
-        print("Student not found!")  
+        display_students(student)
     conn.close()
 if __name__=="__main__":
     lookup()

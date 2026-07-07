@@ -10,3 +10,9 @@ def display_students(student):
     print(f"CGPA     : {student[6]}")
     print("-" * 30)
     print()
+def get_student_by_roll_no(cursor,roll_no):
+    cursor.execute(""" 
+    SELECT * FROM students
+                   WHERE roll = ?
+    """,(roll_no,))
+    return cursor.fetchone()

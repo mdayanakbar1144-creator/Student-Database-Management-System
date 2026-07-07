@@ -1,14 +1,10 @@
 import sqlite3
-from utils import display_students
+from utils import display_students,get_student_by_roll_no
 def updateStudent():
     conn=sqlite3.connect("collage.db")
     cursor = conn.cursor()
     roll_no = int(input("Enter the ROLL NO. : "))
-    cursor.execute(""" 
-    SELECT * FROM students 
-                WHERE roll = ?
-                """,(roll_no,))
-    result = cursor.fetchone()
+    result =get_student_by_roll_no(cursor,roll_no)
     if result is None:
         print("Student not found!")
     else:

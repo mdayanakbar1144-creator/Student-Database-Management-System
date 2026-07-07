@@ -1,14 +1,10 @@
 import sqlite3
-from utils import display_students
+from utils import display_students,get_student_by_roll_no
 def deletestudent():
     conn = sqlite3.connect("collage.db")
     cursor = conn.cursor()
     roll_no = int(input("Enter the roll no. : "))
-    cursor.execute(""" 
-    SELECT * FROM students
-                   WHERE roll = ?
-    """,(roll_no,))
-    student = cursor.fetchone()
+    student = get_student_by_roll_no(cursor,roll_no)
     if student is None:
         print("Student not found!")
         conn.close()
