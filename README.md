@@ -12,7 +12,8 @@ A menu-driven Student Database Management System developed using **Python** and 
 - ✏️ Update student details
 - 🗑️ Delete student records with confirmation
 - 💾 Data stored using SQLite database
-
+- Search students by name
+- Sort students by NAME, CGPA, ROLL_NUMBER
 ---
 
 ## 🛠️ Technologies Used
@@ -36,6 +37,9 @@ Student-Database-Management-System/
 ├── delete_student.py
 ├── view_students.py
 ├── student_db.py
+├── search_by_name.py
+├── sort_student.py
+├── utils.py
 ├── collage.db
 ├── .gitignore
 └── README.md
@@ -67,8 +71,7 @@ python student_menu.py
 
 ## 🚀 Future Improvements
 
-- Search students by name
-- Sort students by CGPA
+
 - Export student records to CSV
 - GUI using Tkinter
 - Login authentication
@@ -78,6 +81,6 @@ python student_menu.py
 
 ## 👨‍💻 Author
 
-**Mohd Ayan**
+**Mohammad Ayan**
 
 Second-year B.Tech CSE student passionate about Python, Data Structures & Algorithms, and Software Development.

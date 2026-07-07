@@ -1,9 +1,15 @@
 import sqlite3
+choice_dictionary = {
+    "1": "name ASC",
+    "2": "name DESC",
+    "3": "cgpa DESC",
+    "4": "cgpa ASC",
+    "5": "roll ASC"
+}
 
-def display_students(order_by):
+def show_sorted_students(order_by):
     conn = sqlite3.connect("collage.db")  
     cursor = conn.cursor()
-
     query = f"""
         SELECT roll, name, cgpa
         FROM students
@@ -30,27 +36,14 @@ def sort_students_menu():
         print("1. By Name (A-Z)\n")
         print("2. By Name (Z-A)\n")
         print("3. By CGPA (Highest First)\n")
-        print("4. By CGPA (Lowest Fi+rst)\n")
+        print("4. By CGPA (Lowest First)\n")
         print("5. By Roll Number\n")
         print("6. Back")
 
         choice = input("\nEnter your choice: ")
 
-        if choice == "1":
-            display_students("name ASC")
-
-        elif choice == "2":
-            display_students("name DESC")
-
-        elif choice == "3":
-            display_students("cgpa DESC")
-
-        elif choice == "4":
-            display_students("cgpa ASC")
-
-        elif choice == "5":
-            display_students("roll ASC")
-
+        if choice in choice_dictionary:
+            show_sorted_students(choice_dictionary[choice])
         elif choice == "6":
             print("Going back...")
             break
