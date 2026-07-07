@@ -4,19 +4,20 @@ import lookup_student as ls
 import update_student as us
 import delete_student as ds
 import search_by_name as sn
+import sort_student as ss
 def main():
     while True:
-        print()
-        print(" ===== Student Database Management System=====")
-        print("1. Add Student. ")
-        print("2. View All Students.")
-        print("3. Update Data. ")
-        print("4. Delete student.")
-        print("5. Search Student by Roll number.")
-        print("6. Search by name. ")
-        print("7. Exit. ")
+        print("\n\n ===== Student Database Management System=====\n\n")
+        print("1. Add Student. \n")
+        print("2. View All Students.\n")
+        print("3. Update Data. \n")
+        print("4. Delete student.\n")
+        print("5. Search Student by Roll number.\n")
+        print("6. Search by name.\n ")
+        print("7. Sort students.\n ")
+        print("8. Exit.\n ")
         choice=input("Enter your choice: ")
-        print()        
+        # print()        
         match choice:
             case '1':
                 ist.insert_student()
@@ -30,12 +31,13 @@ def main():
                 ls.lookup()
             case "6":
                 sn.lookup_by_name()
-            case '7':
-                print("Thanks for using Student database management system :)")
-                print()
+            case "7":
+                ss.sort_students_menu()                
+            case '8':
+                print("\n\nThanks for using Student database management system :)\n\n")
                 break
             case _:
-                print("This is an Invalid choice.")
+                print("\nThis is an Invalid choice.")
 if __name__=="__main__":
     main()
         
