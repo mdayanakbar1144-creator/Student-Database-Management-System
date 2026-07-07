@@ -14,14 +14,16 @@ def updateStudent():
         new_name = input("Enter the new name : ")
         new_branch = input("Enter the new branch : ")
         new_cgpa= float(input("Enter the new CGPA : "))
+        new_email = input("Enter the new email : ")
         print()
         cursor.execute("""
         UPDATE students
                     SET name = ?,
                     branch = ?,
-                    cgpa = ?
+                    cgpa = ?,
+                    email=?
                     where roll = ?
-        """,(new_name,new_branch,new_cgpa,roll_no))
+        """,(new_name,new_branch,new_cgpa,new_email,roll_no))
         conn.commit()
         print("Student data is updated successfully!")
         conn.close()

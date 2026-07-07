@@ -3,6 +3,7 @@ import insert_student as ist
 import lookup_student as ls
 import update_student as us
 import delete_student as ds
+import search_by_name as sn
 def main():
     while True:
         print()
@@ -12,23 +13,10 @@ def main():
         print("3. Update Data. ")
         print("4. Delete student.")
         print("5. Search Student by Roll number.")
-        print("6. Exit. ")
+        print("6. Search by name. ")
+        print("7. Exit. ")
         choice=input("Enter your choice: ")
-        print()
-
-        # if choice=='1':
-        #     ist.insert_student()
-        # elif choice=='2':
-        #     vs.view_student()
-        # elif choice=='3':
-        #     ls.lookup()
-        # elif choice=='4':
-        #     print("Thanks for using Student database management system :)")
-        #     print()
-        #     break
-        # else:
-        #     print("This is an Invalid choice.")
-        
+        print()        
         match choice:
             case '1':
                 ist.insert_student()
@@ -40,7 +28,9 @@ def main():
                 ds.deletestudent()
             case "5":
                 ls.lookup()
-            case '6':
+            case "6":
+                sn.lookup_by_name()
+            case '7':
                 print("Thanks for using Student database management system :)")
                 print()
                 break
