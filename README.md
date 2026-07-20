@@ -66,9 +66,11 @@ Student-Database-Management-System/
 ├── lookup_student.py
 ├── update_student.py
 ├── delete_student.py
-├── statistics.py
+├── search_by_name.py
+├── sort_student.py
+├── statistics_dashboard.py
 ├── utils.py
-├── collage.db
+├── college.db
 ├── .gitignore
 └── README.md
 ```
