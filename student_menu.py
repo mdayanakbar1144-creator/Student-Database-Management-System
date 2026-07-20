@@ -5,6 +5,9 @@ import update_student as us
 import delete_student as ds
 import search_by_name as sn
 import sort_student as ss
+import statistic_dashboard as sd
+
+
 def main():
     while True:
         print("\n\n ===== Student Database Management System=====\n\n")
@@ -15,7 +18,8 @@ def main():
         print("5. Search Student by Roll number.\n")
         print("6. Search by name.\n ")
         print("7. Sort students.\n ")
-        print("8. Exit.\n ")
+        print("8. Statistics.\n ")
+        print("9. Exit.\n ")
         choice=input("Enter your choice: ")
         # print()        
         match choice:
@@ -33,7 +37,9 @@ def main():
                 sn.lookup_by_name()
             case "7":
                 ss.sort_students_menu()                
-            case '8':
+            case "8":
+                sd.statistic_dashboard()
+            case '9':
                 print("\n\nThanks for using Student database management system :)\n\n")
                 break
             case _:
