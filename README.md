@@ -115,7 +115,7 @@ The Statistics Dashboard provides quick insights into the student database.
 ---
 #  🎥Demo
 
-[▶️ Click To watch  the Demo](screenshots/demo.mp4)
+![Application Demo](screenshots/demo.gif)
 
 # 📸 Screenshots
 
